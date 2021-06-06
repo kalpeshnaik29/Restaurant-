@@ -14,25 +14,30 @@ export class UpdaterestaurantComponent implements OnInit {
 
   alert:boolean = false;
 
-  updateRestaurant=new FormGroup({
+  editRestaurant=new FormGroup({
     name: new FormControl(''),
     email: new FormControl(''),
-    password: new FormControl(''),
+    address: new FormControl(''),
 
   })
   constructor(private rest:AllcommonService, private router:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.rest.updateRestaurantNewData(this.router.snapshot.params.email).subscribe((result: { [x: string]: any; }) =>{
-      this.updateRestaurant=new FormGroup({
-        name: new FormControl(result['name']),
-        email: new FormControl(result['email']),
-        password: new FormControl(result['password']),
+    this.rest.updateRestaurantNewData(this.router.snapshot.params.id).subscribe((result) =>{
+      this.editRestaurant=new FormGroup({
+        name: new FormControl(['name']),
+        email: new FormControl(['email']),
+        password: new FormControl(['address']),
     })
   })
     }
 
-  // updateRest(){}
+   updateRestaurantLatestData(){
+     this.rest.updateRestaurantLatestData(this.router.snapshot.params.id,this.editRestaurant.value).subscribe((result) =>{
+       console.log(result,"Updated Succesfully...");
+       this.alert=true;
+     })
+   }
 
   alertClose(){
     this.alert=false;

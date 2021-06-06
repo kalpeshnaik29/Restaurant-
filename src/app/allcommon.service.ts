@@ -25,8 +25,13 @@ addRestaurantNew(data: any){
   return this.http.post(this.URLnewrestaurant, data);
 }
 
-updateRestaurantNewData(data: any){
-  return this.http.get(this.URLupdaterestaurant,data);
+updateRestaurantNewData(id:any){
+  return this.http.get(`${this.URLupdaterestaurant}/${id}`);
 }
+
+updateRestaurantLatestData(id: any,data: any){
+  return this.http.put(`${this.URLupdaterestaurant}/${id}`,data);
+}
+
 }
 
