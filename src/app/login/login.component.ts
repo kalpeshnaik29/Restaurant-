@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { AllcommonService } from '../allcommon.service';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -7,9 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  alert:boolean = false;
+
+  email!: string;
+  password!: string;
+
+  constructor(private route:ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  login(){
+    if(this.email=="admin@domain.com" && this.password=="admin@123"){
+    this.router.navigate(['../listuser']);
+  }
+  else{
+    alert("Please enter valid Email id & password")
+  }
   }
 
 }

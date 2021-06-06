@@ -7,6 +7,8 @@ import { HttpClient } from '@angular/common/http';
 export class AllcommonService {
 
   URLuser ="https://akup96.deta.dev/users";
+  URLregister="https://akup96.deta.dev/users/register";
+
   URLrestaurant = "https://akup96.deta.dev/restaurant";
   URLnewrestaurant = "https://akup96.deta.dev/restaurant";
   URLupdaterestaurant = "https://akup96.deta.dev/restaurant/6050bee65c82680007bf407a";
@@ -31,6 +33,10 @@ updateRestaurantNewData(id:any){
 
 updateRestaurantLatestData(id: any,data: any){
   return this.http.put(`${this.URLupdaterestaurant}/${id}`,data);
+}
+
+addUser(data:any){
+  return this.http.post(this.URLregister+"users",data);
 }
 
 }
