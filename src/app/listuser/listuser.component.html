@@ -1,0 +1,22 @@
+<table class="table m-4" >
+    <thead>
+      <tr>
+        <th scope="col">Email</th>
+        <th scope="col">Name</th>
+        <th scope="col">Password </th>
+      </tr>
+    </thead>
+    <tbody *ngIf ='this.collectiondata'>
+        <tr>
+            <td>ddd</td>
+            <td>ff</td>
+            <td>ff</td>
+          </tr>
+        <!-- ?.docs -->
+      <tr *ngFor='let user of collectiondata'>
+        <td>{{user.email}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.password}}</td>
+      </tr>
+    </tbody>
+  </table>
