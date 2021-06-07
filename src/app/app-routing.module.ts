@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:"listuser", component:ListuserComponent},
   {path:"listrestaurant", component:ListrestaurantComponent},
   {path:"addrestaurant", component:AddrestaurantComponent},
-  {path:"updaterestaurant", component:UpdaterestaurantComponent}
+  {path:"updaterestaurant/:id", component:UpdaterestaurantComponent}
 ];
 
 @NgModule({

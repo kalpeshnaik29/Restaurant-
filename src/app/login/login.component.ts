@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   alert:boolean = false;
+  
 
   email!: string;
   password!: string;
@@ -22,7 +23,9 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    if(this.email=="admin@domain.com" && this.password=="admin@123"){
+
+    // console.log(this.email);
+    if(this.email=="vassuvdhasu@smail.com" && this.password=="mexico123"){
     this.router.navigate(['../listuser']);
   }
   else{

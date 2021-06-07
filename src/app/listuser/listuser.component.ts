@@ -8,20 +8,16 @@ import { AllcommonService } from '../allcommon.service'
 })
 export class ListuserComponent implements OnInit {
 
-   public collectiondata :any;
+   public collectiondata :any =[];
 
-  constructor(private allcommon:AllcommonService) { 
-    // this.allcommon.getUserList().subscribe((result)=>{
-    //   this.collectiondata = result;
-    //   console.log(this.collectiondata);
-    // });
+  constructor(private allcommon:AllcommonService) {
   }
 
   ngOnInit(): void {
-      this.allcommon.getUserList().subscribe((result)=>{
-      this.collectiondata = result;
+    this.allcommon.getUserList().subscribe((result)=>{
+      this.collectiondata= result;
       console.log(this.collectiondata);
-    });
+    })
   }
 
 }

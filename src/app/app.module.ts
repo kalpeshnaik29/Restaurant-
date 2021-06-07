@@ -13,6 +13,7 @@ import { ListrestaurantComponent } from './listrestaurant/listrestaurant.compone
 import { AddrestaurantComponent } from './addrestaurant/addrestaurant.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UpdaterestaurantComponent } from './updaterestaurant/updaterestaurant.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { UpdaterestaurantComponent } from './updaterestaurant/updaterestaurant.c
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [],

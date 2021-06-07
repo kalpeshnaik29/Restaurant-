@@ -8,15 +8,30 @@ import { AllcommonService } from '../allcommon.service'
 })
 export class ListrestaurantComponent implements OnInit {
 
-  public collectiondatar :any;
+  alert:boolean = false;
+
+  public collectiondatarest :any=[];
+  data: any;
 
   constructor(private allcommon:AllcommonService) { }
 
   ngOnInit(): void {
     this.allcommon.getRestaurantList().subscribe((result)=>{
-      this.collectiondatar= result;
-      console.log(this.collectiondatar);
+      this.collectiondatarest= result;
+      console.log(this.collectiondatarest);
     });
+  }
+
+
+  deletRestuarent(restaurant : any){
+    const index = this.collectiondatarest.indexOf(restaurant);
+    const result=this.collectiondatarest.splice(index, 1);
+    this.alert=true;
+    console.log("Data is deleted....", result);
+}
+
+  alertClose(){
+    this.alert=false;
   }
 
 }

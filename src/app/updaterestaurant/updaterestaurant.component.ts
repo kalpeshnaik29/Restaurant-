@@ -23,8 +23,8 @@ export class UpdaterestaurantComponent implements OnInit {
   constructor(private rest:AllcommonService, private router:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.rest.updateRestaurantNewData(this.router.snapshot.params.id).subscribe((result) =>{
-      this.editRestaurant=new FormGroup({
+    this.rest.currentRestaurantNewData(this.router.snapshot.params.id).subscribe((result) =>{
+      this.editRestaurant = new FormGroup({
         name: new FormControl(['name']),
         email: new FormControl(['email']),
         password: new FormControl(['address']),
